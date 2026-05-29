@@ -5,6 +5,8 @@ import {
   ScrollView,
 } from "react-native";
 
+import SearchBar from "../../components/SearchBar";
+import CategoryCard from "../../components/CategoryCard";
 import FoodCard from "../../components/FoodCard";
 import CustomButton from "../../components/CustomButton";
 
@@ -17,9 +19,9 @@ export default function HomeScreen() {
       style={styles.container}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.header}>
+      <View style={styles.hero}>
         <Text style={styles.welcome}>
-          Welcome to
+          Welcome 👋
         </Text>
 
         <Text style={styles.title}>
@@ -27,8 +29,28 @@ export default function HomeScreen() {
         </Text>
 
         <Text style={styles.subtitle}>
-          Premium Food Ordering Experience
+          Delicious homemade treats delivered to your doorstep.
         </Text>
+      </View>
+
+      <View style={styles.searchSection}>
+        <SearchBar />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>
+          Categories
+        </Text>
+
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
+          <CategoryCard title="Watalappan" />
+          <CategoryCard title="Jelly Pudding" />
+          <CategoryCard title="Desserts" />
+          <CategoryCard title="Featured" />
+        </ScrollView>
       </View>
 
       <View style={styles.section}>
@@ -38,18 +60,18 @@ export default function HomeScreen() {
 
         <FoodCard
           title="Traditional Watalappan"
-          price="Rs. 120"
+          price="Rs. 2,500"
           image="https://images.unsplash.com/photo-1551024601-bec78aea704b"
         />
 
         <FoodCard
           title="Premium Jelly Pudding"
-          price="Rs. 120"
+          price="Rs. 1,800"
           image="https://images.unsplash.com/photo-1488477181946-6428a0291777"
         />
 
         <CustomButton
-          title="Explore More Products"
+          title="Explore Products"
         />
       </View>
     </ScrollView>
@@ -62,9 +84,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
   },
 
-  header: {
-    padding: SPACING.lg,
+  hero: {
     paddingTop: 70,
+    paddingHorizontal: SPACING.lg,
+    paddingBottom: SPACING.lg,
   },
 
   welcome: {
@@ -82,19 +105,24 @@ const styles = StyleSheet.create({
   subtitle: {
     marginTop: 10,
     fontSize: 16,
-    color: COLORS.textSecondary,
     lineHeight: 24,
+    color: COLORS.textSecondary,
+  },
+
+  searchSection: {
+    paddingHorizontal: SPACING.lg,
+    marginBottom: SPACING.lg,
   },
 
   section: {
     paddingHorizontal: SPACING.lg,
-    paddingBottom: 40,
+    marginBottom: SPACING.xl,
   },
 
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 16,
     color: COLORS.textPrimary,
   },
 });
