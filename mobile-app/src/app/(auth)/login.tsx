@@ -6,6 +6,7 @@ import {
 } from "react-native";
 
 import { Link } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
@@ -15,7 +16,13 @@ import { COLORS } from "../../theme/colors";
 export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
+      <View style={styles.card}>
+        <Ionicons
+          name="restaurant"
+          size={60}
+          color={COLORS.primary}
+        />
+
         <Text style={styles.title}>
           Welcome Back
         </Text>
@@ -33,11 +40,17 @@ export default function LoginScreen() {
 
         <CustomButton title="Login" />
 
-        <Link href="/(auth)/forgot-password" style={styles.link}>
+        <Link
+          href="/(auth)/forgot-password"
+          style={styles.link}
+        >
           Forgot Password?
         </Link>
 
-        <Link href="/(auth)/register" style={styles.link}>
+        <Link
+          href="/(auth)/register"
+          style={styles.link}
+        >
           Create Account
         </Link>
       </View>
@@ -49,30 +62,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
+    justifyContent: "center",
+    padding: 20,
   },
 
-  content: {
-    flex: 1,
-    justifyContent: "center",
+  card: {
+    backgroundColor: COLORS.white,
+    borderRadius: 24,
     padding: 24,
   },
 
   title: {
+    marginTop: 12,
     fontSize: 32,
     fontWeight: "bold",
     color: COLORS.primary,
-    marginBottom: 10,
   },
 
   subtitle: {
-    fontSize: 16,
+    marginTop: 8,
+    marginBottom: 24,
     color: COLORS.textSecondary,
-    marginBottom: 30,
+    fontSize: 16,
   },
 
   link: {
-    marginTop: 16,
     textAlign: "center",
+    marginTop: 16,
     color: COLORS.primary,
   },
 });

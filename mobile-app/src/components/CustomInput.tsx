@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     borderRadius: 16,
     paddingHorizontal: 16,
-    paddingVertical: 14,
+    paddingVertical: 16,
     fontSize: 16,
   },
 });
