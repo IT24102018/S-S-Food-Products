@@ -9,6 +9,8 @@ import SearchBar from "../../components/SearchBar";
 import CategoryCard from "../../components/CategoryCard";
 import FoodCard from "../../components/FoodCard";
 import CustomButton from "../../components/CustomButton";
+import PromoBanner from "../../components/PromoBanner";
+import ProductionCard from "../../components/ProductionCard";
 
 import { COLORS } from "../../theme/colors";
 import { SPACING } from "../../constants/spacing";
@@ -31,6 +33,10 @@ export default function HomeScreen() {
         <Text style={styles.subtitle}>
           Delicious homemade treats delivered to your doorstep.
         </Text>
+      </View>
+
+      <View style={styles.section}>
+         <PromoBanner />
       </View>
 
       <View style={styles.searchSection}>
@@ -60,20 +66,63 @@ export default function HomeScreen() {
 
         <FoodCard
           title="Traditional Watalappan"
-          price="Rs. 2,500"
+          price="Rs. 120.00"
           image="https://images.unsplash.com/photo-1551024601-bec78aea704b"
         />
 
         <FoodCard
           title="Premium Jelly Pudding"
-          price="Rs. 1,800"
+          price="Rs. 110.00"
           image="https://images.unsplash.com/photo-1488477181946-6428a0291777"
+        />
+
+        <FoodCard
+          title="Breakfast - Rice & Curry"
+          price="Rs. 200.00"
+          image={require("../../../assets/images/rice-6247160_960_720-430x287.jpg")}
         />
 
         <CustomButton
           title="Explore Products"
         />
       </View>
+
+      <View style={styles.section}>
+  <Text style={styles.sectionTitle}>
+    Food Production
+  </Text>
+
+  <ScrollView
+    horizontal
+    showsHorizontalScrollIndicator={false}
+  >
+    <ProductionCard
+      title="Traditional Watalappan"
+      image="https://images.unsplash.com/photo-1505253716362-afaea6c55e16"
+    />
+
+    <ProductionCard
+      title="Premium Jelly Pudding"
+      image="https://images.unsplash.com/photo-1488477181946-6428a0291777"
+    />
+  </ScrollView>
+  </View>
+
+  <View style={styles.section}>
+  <Text style={styles.sectionTitle}>
+    Quick Actions
+  </Text>
+
+  <CustomButton
+    title="Order Watalappan"
+  />
+
+  <View style={{ height: 12 }} />
+
+  <CustomButton
+    title="Order Jelly Pudding"
+  />
+</View>
     </ScrollView>
   );
 }

@@ -11,7 +11,7 @@ import { RADIUS } from "../constants/radius";
 type Props = {
   title: string;
   price: string;
-  image: string;
+  image: any;
 };
 
 export default function FoodCard({
@@ -21,7 +21,14 @@ export default function FoodCard({
 }: Props) {
   return (
     <View style={styles.card}>
-      <Image source={{ uri: image }} style={styles.image} />
+      <Image
+  source={
+    typeof image === "string"
+      ? { uri: image }
+      : image
+  }
+  style={styles.image}
+/>
 
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>
