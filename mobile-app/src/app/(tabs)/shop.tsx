@@ -45,6 +45,7 @@ export default function ShopScreen() {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <FoodCard
+            id={item.id}
             title={item.name}
             price={item.price}
             image={item.image}

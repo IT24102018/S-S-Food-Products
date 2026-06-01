@@ -65,18 +65,21 @@ export default function HomeScreen() {
         </Text>
 
         <FoodCard
+            id="1"
           title="Traditional Watalappan"
           price="Rs. 120.00"
           image="https://images.unsplash.com/photo-1551024601-bec78aea704b"
         />
 
         <FoodCard
+            id="2"
           title="Premium Jelly Pudding"
           price="Rs. 110.00"
           image="https://images.unsplash.com/photo-1488477181946-6428a0291777"
         />
 
         <FoodCard
+          id="6"
           title="Breakfast - Rice & Curry"
           price="Rs. 200.00"
           image={require("../../../assets/images/rice-6247160_960_720-430x287.jpg")}
